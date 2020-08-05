@@ -124,16 +124,16 @@ int main(int argc, char **argv)
 		if (strncmp(buffer_word, "SADC", 4) == 0)
 		{								
 			//Reset FIFOs
-			rst_FIFOs(gpio_2);
+			rst_FIFOs(gpio_0);
 			
 			//Configure and start data acquisition
-			cfg_FIFOs(gpio_2, newsockfd);			
+			cfg_FIFOs(gpio_0, newsockfd);			
 		}
 		
 		//Sava data in txt file
 		else if (strncmp(buffer_word, "SAVE", 4) == 0)		
 		{
-			saveData(gpio_3,gpio_2,data_1,data_2,DataFile_ch1,DataFile_ch2,data_ch1,data_ch2);			
+			saveData(gpio_1,gpio_0,data_1,data_2,DataFile_ch1,DataFile_ch2,data_ch1,data_ch2);			
 		}			
 	}
 }
